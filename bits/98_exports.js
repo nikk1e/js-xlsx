@@ -5,3 +5,4 @@ XLSX.write = writeSync;
 XLSX.writeFile = writeFileSync;
 XLSX.utils = utils;
 XLSX.SSF = SSF;
+XLSX.readSheet = getzipdata;
