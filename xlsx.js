@@ -866,15 +866,18 @@ function getzipdata(zip, file, safe) {
 	try { return getzipdata(zip, file); } catch(e) { return null; }
 }
 
-var _fs, jszip;
-if(typeof JSZip !== 'undefined') jszip = JSZip;
+//Needed to force for browserify
+var _fs = require('fs');
+var jszip = require('jszip');
+/**if(typeof JSZip !== 'undefined') jszip = JSZip;
 if (typeof exports !== 'undefined') {
 	if (typeof module !== 'undefined' && module.exports) {
 		if(has_buf && typeof jszip === 'undefined') jszip = require('js'+'zip');
 		if(typeof jszip === 'undefined') jszip = require('./js'+'zip').JSZip;
 		_fs = require('f'+'s');
 	}
-}
+}**/
+
 var attregexg=/\b[\w:]+=["'][^"]*['"]/g;
 var tagregex=/<[^>]*>/g;
 var nsregex=/<\w*:/, nsregex2 = /<(\/?)\w+:/;

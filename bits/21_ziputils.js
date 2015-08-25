@@ -32,7 +32,10 @@ function getzipdata(zip, file, safe) {
 	try { return getzipdata(zip, file); } catch(e) { return null; }
 }
 
-var _fs, jszip;
+//Needed to force for browserify
+var _fs = require('fs');
+var jszip = require('jszip');
+/**var _fs, jszip;
 if(typeof JSZip !== 'undefined') jszip = JSZip;
 if (typeof exports !== 'undefined') {
 	if (typeof module !== 'undefined' && module.exports) {
@@ -40,4 +43,4 @@ if (typeof exports !== 'undefined') {
 		if(typeof jszip === 'undefined') jszip = require('./js'+'zip').JSZip;
 		_fs = require('f'+'s');
 	}
-}
+}**/
